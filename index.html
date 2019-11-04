@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			labyrintjakten
+		</title>
+
+		<script>
+			//Progressbar function
+			var i = 0;
+			function screenLoad() {
+			  	if (i == 0) {
+			    	i = 1;
+				    var elem = document.getElementById("myBar");
+				    var width = 1;
+				    var id = setInterval(frame, 45);
+				    function frame() {
+				      	if (width >= 100) {
+					        clearInterval(id);
+					        i = 0;
+			      		} else {
+			        		width++;
+			        		elem.style.width = width + "%";
+			        		elem.innerHTML = width + "%";
+			      		}
+			   		}
+			  	}
+			}
+		</script>
+
+		<link rel = "stylesheet" type = "text/css" href="labyrintJaktenSc.css">
+	</head>
+	
+	<body onload = " screenLoad(); setInterval('screenLoad()', 500)">
+
+		<div id= "left"> </div>
+		<div id= "right"> </div>
+		<div id= "top"> </div>
+		<div id= "bottom"> </div>
+
+		<div id = "box">
+			<img src = "LabyrintJaktenLogotyp.png">
+
+			<div id="myProgress">
+  				<div id="myBar"> 0% </div>
+			</div> 
+		</div>
+	</body>
+</html>
+
+
+<!-- 
+ToDo List:
+
+* Bar radius and font phosphate 
+
+-->
