@@ -1,0 +1,131 @@
+<html>
+	<head>
+		<title>
+			labyrintjakten
+		</title>
+
+		<script>
+			
+		</script>
+
+		<link rel = "stylesheet" type = "text/css" href="labyrintJaktenSc.css">
+	</head>
+	<body>
+		<div class = "container" id = "header"> 	
+			<button onClick = "window.location.href = 'navigationView.html'" class = "box" id = "back"> </button>
+			<h1 id = "labyrint"><strong>LABYRINT</strong></h1>
+			<button onClick = "window.location.href = 'navigationView.html'" class = "box" id = "home"> </button>
+			<h1 id = "jakten"><strong>JAKTEN</strong></h1>				
+			<button class = "box" id = "sound"> </button>
+		</div>
+		<div id = "lab"> 
+		</div>
+		<div id = "left"> </div>
+		<div id = "right"> </div>
+		<div id = "top"> </div>
+		<div id = "bottom"> </div>
+
+		<div class = "container" id = "setup">
+			
+			<div class = "container" id = "headline">
+				<h2 id = "head"> 1 SPELARE - LÄTT </h2>
+			</div>
+
+			<div class = "container" id = "difficultyContainer">
+				<button class = "difficulty" id = "easy"> LÄTT </button>
+				<button class = "difficulty" id = "medium"> MEDEL </button>
+				<button class = "difficulty" id = "hard"> SVÅR </button>
+			</div>
+
+			<div class = "container" id = "level">
+				<button class = levelButton id = "one"> 1 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "two"> 2 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "three"> 3 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "four"> 4 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "five"> 5 </button>
+				<img id = "arrowUp" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "six"> 6 </button>
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "seven"> 7 </button>
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "eight"> 8 </button>
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "nine"> 9 </button>
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "ten"> 10 </button>
+				<img id = "arrowUp" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "eleven"> 11 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "twelve"> 12 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "thirteen"> 13 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "fourteen"> 14 </button>
+				<img id = "arrowRight" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "fifteen"> 15 </button>
+				<img id = "arrowUp" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "sixteen"> 16 </button>
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "seventeen"> 17 </button> 
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "eighteen"> 18 </button>
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "nineteen"> 19 </button>
+				<img id = "arrowLeft" src = "nextArrowYellow.png"> 
+				<button class = levelButton id = "twenty"> 20 </button>  
+			</div>
+
+			<!--
+			<div class = "container" id = "level">
+				<button class = levelButton id = "1"> 1 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div>
+				<button class = levelButton id = "2"> 2 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div> 
+				<button class = levelButton id = "3"> 3 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div>
+				<button class = levelButton id = "4"> 4 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div>
+				<button class = levelButton id = "5"> 5 </button>
+				<div class = "arrowBox" id = "arrowUp"> </div> 
+				<button class = levelButton id = "6"> 6 </button>
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "7"> 7 </button>
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "8"> 8 </button>
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "9"> 9 </button>
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "10"> 10 </button>
+				<div class = "arrowBox" id = "arrowUp"> </div> 
+				<button class = levelButton id = "11"> 11 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div>
+				<button class = levelButton id = "12"> 12 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div>
+				<button class = levelButton id = "13"> 13 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div>
+				<button class = levelButton id = "14"> 14 </button>
+				<div class = "arrowBox" id = "arrowRight"> </div> 
+				<button class = levelButton id = "15"> 15 </button>
+				<div class = "arrowBox" id = "arrowUp"> </div>
+				<button class = levelButton id = "16"> 16 </button>
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "17"> 17 </button> 
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "18"> 18 </button>
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "19"> 19 </button>
+				<div class = "arrowBox" id = "arrowLeft"> </div> 
+				<button class = levelButton id = "20"> 20 </button>  
+			</div> -->
+
+			<div class = "container" id = "start">
+				<button id = "spela"> SPELA </button>
+			</div>
+		</div>
+		
+	</body>
+</html>

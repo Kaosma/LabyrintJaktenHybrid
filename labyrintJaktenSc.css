@@ -1,17 +1,31 @@
+/* Loading Screen*/
 body {
 	background: #2659cc;
 	width: 100%;
-    height: 100%;
+  height: 100%;
+}
+
+#lab {
+  background-image: url("labyrinthTransparent.png");
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.05;
 }
 
 #left, #right, #top, #bottom {
 	background: #021a46;
 	position: fixed;
+  z-index: 1;
 }
 
 #box {
-  	text-align: center;
-  	margin-top: 15%
+  text-align: center;
+  margin-top: 15%
 }
 
 img {
@@ -21,7 +35,7 @@ img {
 
 #left, #right {
 	top: 0; bottom: 0;
-	width: 1%;
+	width: 15px;
 }
 
 #left { left: 0; }
@@ -29,27 +43,314 @@ img {
 
 #top, #bottom {
 	left: 0; right: 0;
-	height: 2.5%;
+	height: 15px;
 }
 
 #top { top: 0; }
 #bottom { bottom: 0; }
 
+@font-face {
+  font-family: phosphateInline;
+  src: url(Phosphate-Font/PhosphateInline.ttf) format("truetype");
+}
+
 #myProgress {
-  width: 20%;
+  width: 25%;
   background-color: #ffffff;
   margin-top: 1%;
-  margin-left: 40%;
+  margin-left: 37.5%;
   border-radius: 20px;
 }
 
 #myBar {
   width: 0.5%;
-  height: 28px;
+  height: 100%;
   background-color: #021a46;
   text-align: center;
-  line-height: 28px;
+  line-height: 200%;
   color: #ffffff;
-  font-family: fantasy;
+  font-family: phosphateInline;
   border-radius: 20px;
+  font-size: 120%;
 }
+
+
+/* Navigation Screen*/
+#header {
+  display: grid;
+  grid-template-columns: 1fr 4fr 2fr 4fr 1fr;
+  grid-auto-rows: auto;
+  font-family: phosphateInline;
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+  justify-items: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: phosphateInline;
+  font-size: 250%;
+  background-color: transparent;
+  color: white;
+  letter-spacing: 8px;
+}
+
+#home {
+  height: 100px;
+  width: 100px;
+  background-image: url("LabyrintJaktenLogotyp.png");
+  background-size: cover;
+  border-width: 0;
+  background-color: transparent;
+  z-index: 1;
+}
+
+#back {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border-width: 0;
+  background-image: url("triangleBackButtonWhite.png");
+  background-size: cover;
+  z-index: 1;
+}
+
+#backSpecial {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border-width: 0;
+}
+
+#sound {
+  height: 50px;
+  width: 50px;
+  background-color: transparent;
+  border-width: 0;
+  background-image: url("soundButtonWhite.png");
+  background-size: cover;
+}
+
+#menu {
+  width: 35%;
+  height: 30%;
+  position: absolute;
+  display: grid;
+  grid-template-columns: auto;
+  grid-auto-rows: 1fr 1fr 1fr;
+  grid-gap: 20%;
+  top: 45%;
+  left: 40%;
+}
+
+.menuBox {
+  height: 50px;
+  width: 250px;
+  text-align: center;
+  border-radius: 40px;
+  border-width: 0;
+  background-color: #ffa700;
+  font-family: phosphateInline;
+  font-size: 175%;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+/* Game Setup Screen*/
+#setup {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 50px auto;
+  grid-template-areas: 
+                      "h h h h"
+                      "d l l s" 
+}
+#headline {
+  grid-area: h;
+  text-align: center;
+  align-self: center;
+  border-bottom-style: dotted;
+  border-bottom-color: black;
+  border-bottom-width: 2px;
+}
+
+h2 {
+  font-family: phosphateInline;
+  font-size: 230%;
+  background-color: transparent;
+  color: white;
+  letter-spacing: 8px;
+}
+
+.difficulty {
+  grid-area: d;
+  height: 50px;
+  width: 250px;
+  text-align: center;
+  border-radius: 0 40px 40px 0;
+  border-width: 2px;
+  font-family: phosphateInline;
+  font-size: 175%;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+#difficultyContainer {
+  display: grid;
+  border-style: dotted;
+  border-color: black;
+  border-width: 2px;
+  grid-template-columns: auto;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-areas: "." "." "lätt" "." "medel" "." "svår"
+}
+
+#easy {
+  grid-area: lätt;
+  background-color: #ffa700;
+  border-color: #fff500;
+}
+
+#medium {
+  grid-area: medel;
+  background-color: #ff6100;
+  border-color: #ffa700;
+}
+
+#hard {
+  grid-area: svår;
+  background-color: #f43f09;
+  border-color: #ff6100;
+}
+
+#start {
+  border-style: dashed;
+  border-width: 1px;
+  border-color: black;
+  text-align: center;
+  align-self: center;
+}
+
+#spela {
+  grid-area: s;
+  height: 80px;
+  width: 200px;
+  text-align: center;
+  border-radius: 20px;
+  border-width: 3px;
+  background-color: #1dbe00;
+  border-color: #021a46;
+  font-family: phosphateInline;
+  font-size: 175%;
+  color: #ffffff;
+  letter-spacing: 2px;
+}
+
+#level {
+  border-style: dashed;
+  border-width: 1px;
+  border-color: black;
+  grid-area: l;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-areas: 
+                       "twenty al ninet al eighteen al sevent al sixt"
+                       ". . . . . . . . au"
+                       "eleven ar twelve ar thirt ar fourt ar fift"
+                       "au . . . . . . . ."
+                       "ten al nine al eight al seven al six"
+                       ". . . . . . . . au"
+                       "one ar two ar three ar four ar five"
+}
+
+.levelButton {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border-style: none;
+  background-color: #021a46;
+  font-family: symbol;
+  font-size: 100%;
+  color: #ffffff;
+}
+
+#arrowRight {
+  grid-area: ar;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+}
+
+#arrowLeft {
+  grid-area: al;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  transform: rotate(180deg);
+}
+
+#arrowUp {
+  grid-area: au;
+  height: 40px;
+  width: 40px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: white;
+  transform: rotate(270deg);
+}
+
+#one {
+  grid-area: one;
+}
+
+#two {
+  grid-area: two;
+}
+
+#three { grid-area: three; }
+
+#four { grid-area: four; }
+
+#five { grid-area: five; }
+
+#six { grid-area: six; }
+
+#seven { grid-area: seven; }
+
+#eight { grid-area: eight; }
+
+#nine { grid-area: nine; }
+
+#ten { grid-area: ten;}
+
+#eleven { grid-area: eleven;}
+
+#twelve { grid-area: twelve;}
+
+#thirteen { grid-area: thirt;}
+
+#fourteen { grid-area: fourt;}
+
+#fifteen { grid-area: fift;}
+
+#sixteen { grid-area: sixt;}
+
+#seventeen { grid-area: sevent;}
+
+#eighteen { grid-area: eighteen;}
+
+#nineteen { grid-area: ninet;}
+
+#twenty { grid-area: twenty;}
+
+/* Game Screen*/
+
+/* PlayWithFriends Screen*/
+
+/* Settings Screen*/
