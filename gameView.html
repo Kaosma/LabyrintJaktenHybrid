@@ -1,0 +1,79 @@
+<html>
+	<head>
+		<title>
+			labyrintjakten
+		</title>
+
+		<link rel = "stylesheet" type = "text/css" href="labyrintJaktenSc.css">
+	</head>
+	<body onload = " createMaze(); setInterval('createMaze()', 1000 )"> 
+		<div class = "container" id = "header"> 	
+			<button class = "box" id = "backSpecial"> </button>
+			<h1 id = "labyrint"><strong>LABYRINT</strong></h1>
+			<button onClick = "window.location.href = 'navigationView.html'" class = "box" id = "home"> </button>
+			<h1 id = "jakten"><strong>JAKTEN</strong></h1>				
+			<button class = "box" id = "sound"> </button>
+		</div>
+
+		<div id = "lab"> </div>
+
+		<div id = "left"> </div>
+		<div id = "right"> </div>
+		<div id = "top"> </div>
+		<div id = "bottom"> </div>
+
+		<div class = "container" id = "gameScreen">
+			<div class = "container" id = "gameBox">
+				<h3> <span id = "maze"> </span> </h3>
+			</div>
+
+			<div id = "rightFlow">
+				<div class = "container" id = "nextButtons">
+					<button class = "box" id = "end"> GE UPP </button>
+					<button class = "box" id = "settings"> INSTÄLLNINGAR</button>
+				</div>
+				<div id = "middleFlow">
+				</div>
+				<div class = "container" id = "steerButtons">
+					<button class = "box" id = "upArrow"> </button>
+					<button class = "box" id = "downArrow"> </button>
+					<button class = "box" id = "leftArrow"> </button>
+					<button class = "box" id = "rightArrow"> </button>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script src = "maze.js">
+			var maze = new Array(16).fill(0).map(()=> new Array(40).fill(0));
+			var rowLength = maze.length;
+			var	columnLength = maze[0].length;
+			function createMaze() {
+				
+			for (var i = 0; i < rowLength; i++) {
+				for(var j = 0; j < columnLength; j++) {
+						
+					if ((i == 0) ||(j == 0)||(j == columnLength-1)||(i == rowLength-1)) {
+						maze[i][j] = '█';
+					} else {
+						maze[i][j] = '';
+					}
+				}
+			}
+			document.getElementById("maze").innerHTML = maze;
+		}
+	</script>
+</html>
+
+<!-- 
+ToDo List:
+
+* user movement function
+* check adjacent function
+* hinder movement function 
+* settings 
+* popup win/loss
+* key binding
+* array vertical space reduce
+
+-->
