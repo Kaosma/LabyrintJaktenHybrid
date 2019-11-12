@@ -90,11 +90,12 @@ img {
 
 h1 {
   font-family: phosphateInline;
-  font-size: 250%;
+  font-size: 275%;
   background-color: transparent;
   color: white;
   letter-spacing: 8px;
   z-index: 1;
+  padding-top: 1.7rem;
 }
 
 #home {
@@ -135,15 +136,13 @@ h1 {
 }
 
 #menu {
-  width: 35%;
-  height: 30%;
-  position: absolute;
   display: grid;
   grid-template-columns: auto;
   grid-auto-rows: 1fr 1fr 1fr;
-  grid-gap: 20%;
   top: 45%;
-  left: 40%;
+  z-index: 1;
+  grid-row-gap: 20%;
+  margin-top: 10%;
 }
 
 .menuBox {
@@ -157,6 +156,9 @@ h1 {
   font-size: 175%;
   color: #ffffff;
   letter-spacing: 2px;
+  padding-top: 1.1rem;
+  z-index: 1;
+  grid-column-start: 2;
 }
 
 /* Game Setup Screen*/
@@ -183,6 +185,7 @@ h2 {
   background-color: transparent;
   color: white;
   letter-spacing: 8px;
+  padding-top: 2rem;
 }
 
 .difficulty {
@@ -193,10 +196,11 @@ h2 {
   border-radius: 0 40px 40px 0;
   border-width: 2px;
   font-family: phosphateInline;
-  font-size: 175%;
+  font-size: 200%;
   color: #ffffff;
   letter-spacing: 2px;
   z-index: 0;
+  padding-top: 1.2rem;
 }
 
 #difficultyContainer {
@@ -246,9 +250,10 @@ h2 {
   background-color: #1dbe00;
   border-color: #021a46;
   font-family: phosphateInline;
-  font-size: 250%;
+  font-size: 275%;
   color: #ffffff;
   letter-spacing: 2px;
+  padding-top: 1.5rem;
 }
 
 #level {

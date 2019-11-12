@@ -6,7 +6,7 @@
 
 		<link rel = "stylesheet" type = "text/css" href="labyrintJaktenSc.css">
 	</head>
-	<body onload = " createMaze(); setInterval('createMaze()', 1000 )"> 
+	<body onload = " displayMaze(); setInterval('displayMaze()', 1000 )"> 
 		<div class = "container" id = "header"> 	
 			<button class = "box" id = "backSpecial"> </button>
 			<h1 id = "labyrint"><strong>LABYRINT</strong></h1>
@@ -44,36 +44,15 @@
 		</div>
 	</body>
 
-	<script src = "maze.js">
-			var maze = new Array(16).fill(0).map(()=> new Array(40).fill(0));
-			var rowLength = maze.length;
-			var	columnLength = maze[0].length;
-			function createMaze() {
-				
-			for (var i = 0; i < rowLength; i++) {
-				for(var j = 0; j < columnLength; j++) {
-						
-					if ((i == 0) ||(j == 0)||(j == columnLength-1)||(i == rowLength-1)) {
-						maze[i][j] = '█';
-					} else {
-						maze[i][j] = '';
-					}
-				}
-			}
-			document.getElementById("maze").innerHTML = maze;
-		}
-	</script>
+	<script src = "maze.js"> </script>
+	<script src= "mazeFunctions.js"> </script>
 </html>
 
 <!-- 
 ToDo List:
+* key binding to movement
 
-* user movement function
-* check adjacent function
-* hinder movement function 
+* array vertical space reduce
 * settings 
 * popup win/loss
-* key binding
-* array vertical space reduce
-
 -->
