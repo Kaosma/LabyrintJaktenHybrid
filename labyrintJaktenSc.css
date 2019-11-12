@@ -392,6 +392,88 @@ h3 {
   justify-content: center;
 }
 
+#rightFlow {
+  display: grid;
+  border-style: dotted;
+  border-color: black;
+  border-width: 2px;
+  text-align: center;
+  z-index: 1;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-areas: "gu"
+                       "se"
+                       "sb"
+                       "sb"
+}
+
+#end {
+  grid-area: gu;
+  height: 50px;
+  width: 180px;
+  text-align: center;
+  border-radius: 20px;
+  font-family: phosphateInline;
+  font-size: 150%;
+  color: #ffffff;
+  background-color: #f43f09;
+  letter-spacing: 2px;
+  padding-top: 1.2rem;
+  margin-top: 10px;
+}
+
+#settings {
+  grid-area: se;
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  border-radius: 20px;
+  font-family: phosphateInline;
+  font-size: 150%;
+  color: #ffffff;
+  background-color: #ffa700;
+  letter-spacing: 2px;
+  padding-top: 1.2rem;
+  margin-top: 20px;
+}
+
+#steerbuttons {
+  grid-area: sb;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: ". ua ."
+                       "la . ra"
+                       ". da ."
+}
+
+.arrowBox {
+  height: 40px;
+  width: 40px;
+  background-image: url("nextArrowYellow.png");
+  background-size: cover;
+  border-width: 0;
+  background-color: transparent;
+}
+
+#upArrow {
+  grid-area: ua;
+  transform: rotate(270deg);
+}
+
+#downArrow {
+  grid-area: da;
+  transform: rotate(90deg);
+}
+
+#leftArrow {
+  grid-area: la;
+  transform: rotate(180deg);
+}
+
+#rightArrow {
+  grid-area: ra;
+}
 /* PlayWithFriends Screen*/
 
 /* Settings Screen*/
