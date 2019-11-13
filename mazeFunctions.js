@@ -5,11 +5,12 @@ var loss = false;
 var win = false;
 var currentY = 7;
 var currentX = 1;
-var monsterOneY = 8;
-var monsterOneX = 9;
-var monsterTwoY = 8;
-var monsterTwoX = 10;
-setInterval(displayMaze, 1000 );
+var userSymbol = "☺";
+
+setInterval(function(){
+	displayMaze();
+	hinderMovement();
+}, 500 );
 
 function displayMaze() {
 	var mazeString = "";
@@ -26,9 +27,9 @@ function displayMaze() {
 
 function moveUp(){
 	if(maze[currentY-1][currentX] == '█') {
-		maze[currentY][currentX] = '☻';
+		maze[currentY][currentX] = userSymbol;
 	} else {
-		maze[currentY-1][currentX] = '☻';
+		maze[currentY-1][currentX] = userSymbol;
 		maze[currentY][currentX] = '';
 		currentY -=1;
 	}
@@ -36,9 +37,9 @@ function moveUp(){
 
 function moveDown(){
 	if(maze[currentY+1][currentX] == '█') {
-		maze[currentY][currentX] = '☻';
+		maze[currentY][currentX] = userSymbol;
 	} else {
-		maze[currentY+1][currentX] = '☻';
+		maze[currentY+1][currentX] = userSymbol;
 		maze[currentY][currentX] = '';
 		currentY +=1;
 	}
@@ -46,9 +47,9 @@ function moveDown(){
 
 function moveLeft(){
 	if(maze[currentY][currentX-1] == '█' || maze[currentY][currentX-1] == '⇰') {
-		maze[currentY][currentX] = '☻';
+		maze[currentY][currentX] = userSymbol;
 	} else {
-		maze[currentY][currentX-1] = '☻';
+		maze[currentY][currentX-1] = userSymbol;
 		maze[currentY][currentX] = '';
 		currentX -=1;
 	}
@@ -56,31 +57,33 @@ function moveLeft(){
 
 function moveRight(){
 	if(maze[currentY][currentX+1] == '█') {
-		maze[currentY][currentX] = '☻';
+		maze[currentY][currentX] = userSymbol;
 	} else {
-		maze[currentY][currentX+1] = '☻';
+		maze[currentY][currentX+1] = userSymbol;
 		maze[currentY][currentX] = '';
 		currentX +=1;
 	}
 }
 
+document.onkeyup = function(event) { getKEY(event) }
+
 function getKEY(event) {
 	var key = event.keyCode;
 	switch (key) {
-		//37
-		case 123:
+		
+		case 37:
 			moveLeft()
 			break;
-		//38
-		case 126:
+		
+		case 38:
 			moveUp()
 			break;
-		//39
-		case 124:
+		
+		case 39:
 			moveRight()
 			break;
-		//40
-		case 125:
+		
+		case 40:
 			moveDown()
 			break;
 	}

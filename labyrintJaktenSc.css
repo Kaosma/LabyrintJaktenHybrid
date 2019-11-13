@@ -89,7 +89,7 @@ img {
 }
 
 h1 {
-  font-family: phosphateInline;
+  font-family: phosphateInline !important; 
   font-size: 275%;
   background-color: transparent;
   color: white;
@@ -257,21 +257,16 @@ h2 {
 }
 
 #level {
+  margin-top: 7%;
   border-style: dashed;
   border-width: 1px;
   border-color: white;
   grid-area: l;
-  /*display: grid;*/
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(6, 1fr);
-  grid-template-areas: 
-                       "twenty al ninet al eighteen al sevent al sixt"
-                       ". . . . . . . . au"
-                       "eleven ar twelve ar thirt ar fourt ar fift"
-                       "au . . . . . . . ."
-                       "ten al nine al eight al seven al six"
-                       ". . . . . . . . au"
-                       "one ar two ar three ar four ar five"
+  height: 20rem;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  bottom: 0;
 }
 
 .levelButton {
@@ -314,77 +309,21 @@ h2 {
   transform: rotate(270deg);
 }
 
-#one {
-  grid-area: one;
-}
-
-#two {
-  grid-area: two;
-}
-
-#three { grid-area: three; }
-
-#four { grid-area: four; }
-
-#five { grid-area: five; }
-
-#six { grid-area: six; }
-
-#seven { grid-area: seven; }
-
-#eight { grid-area: eight; }
-
-#nine { grid-area: nine; }
-
-#ten { grid-area: ten;}
-
-#eleven { grid-area: eleven;}
-
-#twelve { grid-area: twelve;}
-
-#thirteen { grid-area: thirt;}
-
-#fourteen { grid-area: fourt;}
-
-#fifteen { grid-area: fift;}
-
-#sixteen { grid-area: sixt;}
-
-#seventeen { grid-area: sevent;}
-
-#eighteen { grid-area: eighteen;}
-
-#nineteen { grid-area: ninet;}
-
-#twenty { grid-area: twenty;}
-
 /* Game View*/
 
 #gameScreen {
   width: 100%;
   height: 75%;
   display: grid;
-  border-style: dotted;
-  border-color: black;
-  border-width: 1px;
   grid-template-columns: 7fr 3fr;
   grid-template-rows: auto;
   grid-template-areas: "gb rf"
 }
+
 #gameBox {
   grid-area: gb;
-  border-style: dashed;
-  border-color: green;
-  border-width: 1px;
-  background-color: #ffffff;
+  background-color: #2d5bc5;
   z-index: 0;
-}
-
-#rightFlow {
-  grid-area: rf;
-  border-style: dashed;
-  border-color: green;
-  border-width: 1px;
 }
 
 h3 {
@@ -393,10 +332,11 @@ h3 {
 }
 
 #rightFlow {
+  grid-area: rf;
   display: grid;
-  border-style: dotted;
-  border-color: black;
-  border-width: 2px;
+  border-left-style: dotted;
+  border-left-color: black;
+  border-left-width: 2px;
   text-align: center;
   z-index: 1;
   grid-template-columns: auto;

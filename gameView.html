@@ -35,25 +35,22 @@
 				<div id = "middleFlow">
 				</div>
 				<div class = "container" id = "steerButtons">
-					<button onkeydown = getKey(event) onClick = "moveUp()" class = "arrowBox" id = "upArrow"> </button>
-					<button onkeydown = getKey(event) onClick = "moveDown()" class = "arrowBox" id = "downArrow"> </button>
-					<button onkeydown = getKey(event) onClick = "moveLeft()" class = "arrowBox" id = "leftArrow"> </button>
-					<button onkeydown = getKey(event) onClick = "moveRight()" class = "arrowBox" id = "rightArrow"> </button>
+					<button onClick = "moveUp()" class = "arrowBox" id = "upArrow"> </button>
+					<button onClick = "moveDown()" class = "arrowBox" id = "downArrow"> </button>
+					<button onClick = "moveLeft()" class = "arrowBox" id = "leftArrow"> </button>
+					<button onClick = "moveRight()" class = "arrowBox" id = "rightArrow"> </button>
 				</div>
 			</div>
 		</div>
 	</body>
 
 	<script src = "maze.js"> </script>
+	<script src= "hinderMovements.js"> </script>
 	<script src= "mazeFunctions.js"> </script>
 </html>
 
 <!-- 
 ToDo List:
-* key binding to movement
-* hinder movement
-* grid alignment
-- background text
 - array vertical space reduce
 
 * lätt medel svår changes

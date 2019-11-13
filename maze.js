@@ -133,129 +133,89 @@ function createMaze() {
 	maze[8][0] = '⇰'; maze[2][39] = '⇰';
 
 	// User
-	maze[currentY][currentX] = '☻';
-
-	hinderMovement();
+	maze[currentY][currentX] = userSymbol;
 }
 
 function hinderMovement() {
-	maze[monsterOneY][monsterOneX] = '☠'; maze[monsterTwoY][monsterTwoX] = '☠';
-	while(loss == false){
-		for(var i = 0; i < 5; i++) {
-			maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterTwoY+1][monsterTwoX] = '☠';
-			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-			monsterOneY ++; monsterTwoY ++;
+	/*for (var i = 0; i < hinderArray.length; i++) {
+		movement(hinderArray[i][0], hinderArray[i][1])
+		let steps = hinderArray[i][1];
+		steps ++;
+		if(steps == hinderArray[i][0].length) {
+			steps = 0;
 		}
-		maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneY++;
-		maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneX ++;
+	}*/
+	movement(firstSkull, firstSkullSteps);
+	firstSkullSteps++;
+	if (firstSkullSteps == firstSkull.length) {
+		firstSkullSteps = 0;
+	}
 
-		for(var j = 0; j < 3; j++) {
-			maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterTwoY][monsterTwoX+1] = '☠';
-			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-			monsterOneX ++; monsterTwoX ++;
-		}
-		maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneX ++;
-		maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneY--;
+	movement(secondSkull, secondSkullSteps);
+	secondSkullSteps++;
+	if (secondSkullSteps == secondSkull.length) {
+		secondSkullSteps = 0;
+	}
 
-		for(var i = 0; i < 5; i++) {
-			maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterTwoY-1][monsterTwoX] = '☠';
-			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-			monsterOneY --; monsterTwoY --;
-		}
-		maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneY--;
-		maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneX --;
+	movement(thirdSkull, thirdSkullSteps);
+	thirdSkullSteps++;
+	if (thirdSkullSteps == thirdSkull.length) {
+		thirdSkullSteps = 0;
+	}
 
-		for(var j = 0; j < 3; j++) {
-			maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterTwoY][monsterTwoX-1] = '☠';
-			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-			monsterOneX --; monsterTwoX --;
-		}
-		maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneX --;
-		maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-		monsterOneY++;
+	movement(fourthSkull, fourthSkullSteps);
+	fourthSkullSteps++;
+	if (fourthSkullSteps == fourthSkull.length) {
+		fourthSkullSteps = 0;
+	}
 
+	movement(fifthSkull, fifthSkullSteps);
+	fifthSkullSteps++;
+	if (fifthSkullSteps == fifthSkull.length) {
+		fifthSkullSteps = 0;
+	}
+
+	movement(sixthSkull, sixthSkullSteps);
+	sixthSkullSteps++;
+	if (sixthSkullSteps == sixthSkull.length) {
+		sixthSkullSteps = 0;
+	}
+
+	movement(seventhSkull, seventhSkullSteps);
+	seventhSkullSteps++;
+	if (seventhSkullSteps == seventhSkull.length) {
+		seventhSkullSteps = 0;
+	}
+
+	movement(eigthSkull, eigthSkullSteps);
+	eigthSkullSteps++;
+	if (eigthSkullSteps == eigthSkull.length) {
+		eigthSkullSteps = 0;
+	}
+	checkPosition();
+}
+
+function checkPosition() {
+	let skullOne = firstSkull[firstSkullSteps];
+	let skullTwo = secondSkull[secondSkullSteps];
+	let skullThree = thirdSkull[thirdSkullSteps];
+	let skullFour = fourthSkull[fourthSkullSteps];
+	let skullFive = fifthSkull[fifthSkullSteps];
+	let skullSix = sixthSkull[sixthSkullSteps];
+	let skullSeven = seventhSkull[seventhSkullSteps];
+	let skullEight = eigthSkull[eigthSkullSteps];
+	if ((currentY == skullOne[0] && currentX == skullOne[1]) || 
+		(currentY == skullTwo[0] && currentX == skullTwo[1]) || 
+		(currentY == skullThree[0] && currentX == skullThree[1]) || 
+		(currentY == skullFour[0] && currentX == skullFour[1]) || 
+		(currentY == skullFive[0] && currentX == skullFive[1]) || 
+		(currentY == skullSix[0] && currentX == skullSix[1]) || 
+		(currentY == skullSeven[0] && currentX == skullSeven[1]) ||
+		(currentY == skullEight[0] && currentX == skullEight[1])) {
 		loss = true;
+		console.log("YOU LOSE");
+	} 
+	else if ((currentY == 1 && currentX == 39) || (currentY == 2 && currentX == 39)) {
+		console.log("YOU WIN");
 	}
 }
-
-/*if ((currentY == monsterOneY && currentX == monsterOneX) || (currentY == monsterTwoY && currentX == monsterTwoX)) {
-	loss = true;
-} 
-else if ((currentY == 1 && currentX == 39) || (currentY == 2 && currentX == 39)) {
-	
-} else {
-	
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-function hinderMovement() {
-	maze[monsterOneY][monsterOneX] = '☠'; maze[monsterTwoY][monsterTwoX] = '☠';
-	while(loss == false){
-		if ((currentY == monsterOneY && currentX == monsterOneX) || (currentY == monsterTwoY && currentX == monsterTwoX)) {
-			loss = true;
-		} 
-		else if ((currentY == 1 && currentX == 39) || (currentY == 2 && currentX == 39)) {	
-			win = true;
-		} else {
-	
-			for(var i = 0; i < 5; i++) {
-				maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterTwoY+1][monsterTwoX] = '☠';
-				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-				monsterOneY ++; monsterTwoY ++;
-			}
-			maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneY++;
-			maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneX ++;
-
-			for(var j = 0; j < 3; j++) {
-				maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterTwoY][monsterTwoX+1] = '☠';
-				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-				monsterOneX ++; monsterTwoX ++;
-			}
-			maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneX ++;
-			maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneY--;
-
-			for(var i = 0; i < 5; i++) {
-				maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterTwoY-1][monsterTwoX] = '☠';
-				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-				monsterOneY --; monsterTwoY --;
-			}
-			maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneY--;
-			maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneX --;
-
-			for(var j = 0; j < 3; j++) {
-				maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterTwoY][monsterTwoX-1] = '☠';
-				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
-				monsterOneX --; monsterTwoX --;
-			}
-			maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneX --;
-			maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
-			monsterOneY++;
-		}
-	}
-}
-*/
