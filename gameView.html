@@ -6,7 +6,7 @@
 
 		<link rel = "stylesheet" type = "text/css" href="labyrintJaktenSc.css">
 	</head>
-	<body onload = " displayMaze(); setInterval('displayMaze()', 1000 )"> 
+	<body onload = "createMaze(); displayMaze();"> 
 		<div class = "container" id = "header"> 	
 			<button class = "box" id = "backSpecial"> </button>
 			<h1 id = "labyrint"><strong>LABYRINT</strong></h1>
@@ -35,10 +35,10 @@
 				<div id = "middleFlow">
 				</div>
 				<div class = "container" id = "steerButtons">
-					<button class = "arrowBox" id = "upArrow"> </button>
-					<button class = "arrowBox" id = "downArrow"> </button>
-					<button class = "arrowBox" id = "leftArrow"> </button>
-					<button class = "arrowBox" id = "rightArrow"> </button>
+					<button onkeydown = getKey(event) onClick = "moveUp()" class = "arrowBox" id = "upArrow"> </button>
+					<button onkeydown = getKey(event) onClick = "moveDown()" class = "arrowBox" id = "downArrow"> </button>
+					<button onkeydown = getKey(event) onClick = "moveLeft()" class = "arrowBox" id = "leftArrow"> </button>
+					<button onkeydown = getKey(event) onClick = "moveRight()" class = "arrowBox" id = "rightArrow"> </button>
 				</div>
 			</div>
 		</div>
@@ -51,8 +51,15 @@
 <!-- 
 ToDo List:
 * key binding to movement
+* hinder movement
+* grid alignment
+- background text
+- array vertical space reduce
 
-* array vertical space reduce
-* settings 
+* lätt medel svår changes
+* settings page
 * popup win/loss
+* steer arrow alignment
+* button border gameView
+* Percentage
 -->

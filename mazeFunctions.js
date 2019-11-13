@@ -2,21 +2,26 @@ var maze = new Array(16).fill(0).map(()=> new Array(40).fill(0));
 var rowLength = maze.length;
 var	columnLength = maze[0].length;
 var loss = false;
+var win = false;
 var currentY = 7;
 var currentX = 1;
+var monsterOneY = 8;
+var monsterOneX = 9;
+var monsterTwoY = 8;
+var monsterTwoX = 10;
+setInterval(displayMaze, 1000 );
 
 function displayMaze() {
-	createMaze();
+	var mazeString = "";
 	for (var i = 0; i < rowLength; i++) {
-		maze[i] += '<br />';
+		var mazeRow = "";
+		for (var j = 0; j < maze[i].length; j++) {
+			mazeRow += maze[i][j];
+		}
+		mazeRow += '<br />';
+		mazeString += mazeRow;
 	}
-	maze = maze.toString();
-
-	while(maze.includes(",",0)) {
-		maze = maze.replace(',',"");
-	}
-
-	document.getElementById("maze").innerHTML = maze;
+	document.getElementById("maze").innerHTML = mazeString;
 }
 
 function moveUp(){
@@ -55,6 +60,28 @@ function moveRight(){
 	} else {
 		maze[currentY][currentX+1] = '☻';
 		maze[currentY][currentX] = '';
-		currentY +=1;
+		currentX +=1;
+	}
+}
+
+function getKEY(event) {
+	var key = event.keyCode;
+	switch (key) {
+		//37
+		case 123:
+			moveLeft()
+			break;
+		//38
+		case 126:
+			moveUp()
+			break;
+		//39
+		case 124:
+			moveRight()
+			break;
+		//40
+		case 125:
+			moveDown()
+			break;
 	}
 }

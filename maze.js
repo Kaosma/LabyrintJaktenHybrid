@@ -133,42 +133,129 @@ function createMaze() {
 	maze[8][0] = '⇰'; maze[2][39] = '⇰';
 
 	// User
-	maze[7][1] = '☻';
+	maze[currentY][currentX] = '☻';
 
 	hinderMovement();
 }
 
 function hinderMovement() {
-	maze[8][9] = '☠'; maze[8][10] = '☠';
-	//displayMaze();
+	maze[monsterOneY][monsterOneX] = '☠'; maze[monsterTwoY][monsterTwoX] = '☠';
 	while(loss == false){
-		for(var i = 8; i <= 13; i++) {
-			maze[i][9] = '☠'; maze[i][10] = '☠';
-			maze[i-1][9] = ''; maze[i-1][10] = '';
+		for(var i = 0; i < 5; i++) {
+			maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterTwoY+1][monsterTwoX] = '☠';
+			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+			monsterOneY ++; monsterTwoY ++;
 		}
-		maze[14][9] = '☠'; maze[13][9] = '';
-		maze[14][10] = '☠'; maze[14][9] = '';
+		maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneY++;
+		maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneX ++;
 
-		for(var j = 11; j <= 13; j++) {
-			maze[13][j] = '☠'; maze[14][j] = '☠';
-			maze[13][j-1] = ''; maze[14][j-1] = '';
+		for(var j = 0; j < 3; j++) {
+			maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterTwoY][monsterTwoX+1] = '☠';
+			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+			monsterOneX ++; monsterTwoX ++;
 		}
-		maze[14][14] = '☠'; maze[14][13] = '';
-		maze[13][14] = '☠'; maze[14][14] = '';
+		maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneX ++;
+		maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneY--;
 
-		for(var i = 13; i >= 8; i--) {
-			maze[i][13] = '☠'; maze[i][14] = '☠';
-			maze[i+1][13] = ''; maze[i+1][14] = '';
+		for(var i = 0; i < 5; i++) {
+			maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterTwoY-1][monsterTwoX] = '☠';
+			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+			monsterOneY --; monsterTwoY --;
 		}
-		maze[7][14] = '☠'; maze[8][14] = '';
-		maze[7][13] = '☠'; maze[7][14] = '';
+		maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneY--;
+		maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneX --;
 
-		for(var j = 12; j >= 10; j--) {
-			maze[7][j] = '☠'; maze[8][j] = '☠';
-			maze[7][j+1] = ''; maze[8][j+1] = '';
+		for(var j = 0; j < 3; j++) {
+			maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterTwoY][monsterTwoX-1] = '☠';
+			maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+			monsterOneX --; monsterTwoX --;
 		}
-		maze[7][9] = '☠'; maze[7][10] = '';
-		maze[8][9] = '☠'; maze[7][9] = '';
+		maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneX --;
+		maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+		monsterOneY++;
+
 		loss = true;
 	}
 }
+
+/*if ((currentY == monsterOneY && currentX == monsterOneX) || (currentY == monsterTwoY && currentX == monsterTwoX)) {
+	loss = true;
+} 
+else if ((currentY == 1 && currentX == 39) || (currentY == 2 && currentX == 39)) {
+	
+} else {
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function hinderMovement() {
+	maze[monsterOneY][monsterOneX] = '☠'; maze[monsterTwoY][monsterTwoX] = '☠';
+	while(loss == false){
+		if ((currentY == monsterOneY && currentX == monsterOneX) || (currentY == monsterTwoY && currentX == monsterTwoX)) {
+			loss = true;
+		} 
+		else if ((currentY == 1 && currentX == 39) || (currentY == 2 && currentX == 39)) {	
+			win = true;
+		} else {
+	
+			for(var i = 0; i < 5; i++) {
+				maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterTwoY+1][monsterTwoX] = '☠';
+				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+				monsterOneY ++; monsterTwoY ++;
+			}
+			maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneY++;
+			maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneX ++;
+
+			for(var j = 0; j < 3; j++) {
+				maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterTwoY][monsterTwoX+1] = '☠';
+				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+				monsterOneX ++; monsterTwoX ++;
+			}
+			maze[monsterOneY][monsterOneX+1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneX ++;
+			maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneY--;
+
+			for(var i = 0; i < 5; i++) {
+				maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterTwoY-1][monsterTwoX] = '☠';
+				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+				monsterOneY --; monsterTwoY --;
+			}
+			maze[monsterOneY-1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneY--;
+			maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneX --;
+
+			for(var j = 0; j < 3; j++) {
+				maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterTwoY][monsterTwoX-1] = '☠';
+				maze[monsterOneY][monsterOneX] = ''; maze[monsterTwoY][monsterTwoX] = '';
+				monsterOneX --; monsterTwoX --;
+			}
+			maze[monsterOneY][monsterOneX-1] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneX --;
+			maze[monsterOneY+1][monsterOneX] = '☠'; maze[monsterOneY][monsterOneX] = '';
+			monsterOneY++;
+		}
+	}
+}
+*/
