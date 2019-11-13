@@ -38,6 +38,8 @@ var eigthSkull = [[10,17], [10,18], [10,19], [10,20], [10,21], [10,21], [10,21],
 				  [11,21], [12,21], [13,21], [14,21], [13,21], [12,21], 
 				  [11,21], [10,21], [10,21], [10,21], [10,20], [10,19], [10,18]];
 
+var ninthSkull = []
+
 var firstSkullSteps = 0;
 var secondSkullSteps = 0;
 var thirdSkullSteps = 0;
@@ -62,5 +64,5 @@ function movement(path, steps){
 	if (steps == 0) {
 		oldPosition = path[path.length-1];
 	}
-	 maze[oldPosition[0]][oldPosition[1]] = ''; maze[newPosition[0]][newPosition[1]] = '☠';
+	 maze[oldPosition[0]][oldPosition[1]] = ''; maze[newPosition[0]][newPosition[1]] = '♞';
 }
