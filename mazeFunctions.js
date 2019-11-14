@@ -6,11 +6,12 @@ var win = false;
 var currentY = 7;
 var currentX = 1;
 var userSymbol = "☺";
+var difficulty = 500;
 
 setInterval(function(){
 	displayMaze();
 	hinderMovement();
-}, 500 );
+}, 500);
 
 function displayMaze() {
 	var mazeString = "";
@@ -53,6 +54,7 @@ function moveLeft(){
 		maze[currentY][currentX] = '';
 		currentX -=1;
 	}
+	console.log(difficulty);
 }
 
 function moveRight(){

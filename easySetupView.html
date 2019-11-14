@@ -1,25 +1,31 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="gameMap.css">
+		<link rel="stylesheet">
 		<title>
 			labyrintjakten
 		</title>
 
 		<script>
 			function changeStyleEasy() {
-				document.getElementById("easy").style.width = 50%;
-				document.getElementById("medium").style.width = 100%;
-				document.getElementById("hard").style.width = 100%;
+				document.getElementById("easy").style.width = "150px";
+				document.getElementById("medium").style.width = "250px";
+				document.getElementById("hard").style.width = "250px";
+				document.getElementById("firstLevel").style.borderColor = "#ffa700";
+				difficulty = 500;
 			}
 			function changeStyleMedium() {
-				document.getElementById("easy").style.width = 100%;
-				document.getElementById("medium").style.width = 50%;
-				document.getElementById("hard").style.width = 100%;
+				document.getElementById("easy").style.width = "250px";
+				document.getElementById("medium").style.width = "150px";
+				document.getElementById("hard").style.width = "250px";
+				document.getElementById("firstLevel").style.borderColor = "#ff6100";
+				difficulty = 300;
 			}
 			function changeStyleHard() {
-				document.getElementById("easy").style.width = 100%;
-				document.getElementById("medium").style.width = 100%;
-				document.getElementById("hard").style.width = 50%;
+				document.getElementById("easy").style.width = "250px";
+				document.getElementById("medium").style.width = "250px";
+				document.getElementById("hard").style.width = "150px";
+				document.getElementById("firstLevel").style.borderColor = "#f43f09";
+				difficulty = 100;
 			}
 		</script>
 
@@ -47,9 +53,9 @@
 			</div>
 
 			<div class = "container" id = "difficultyContainer">
-				<button onClick = "changeStyleEasy()" class = "difficulty" id = "easy"> LÄTT </button>
-				<button onClick = "changeStyleMedium()" class = "difficulty" id = "medium"> MEDEL </button>
-				<button onClick = "changeStyleHard()" class = "difficulty" id = "hard"> SVÅR </button>
+				<button onclick = "changeStyleEasy()" class = "difficulty" id = "easy"> LÄTT </button>
+				<button onclick = "changeStyleMedium()" class = "difficulty" id = "medium"> MEDEL </button>
+				<button onclick = "changeStyleHard()" class = "difficulty" id = "hard"> SVÅR </button>
 			</div>
 
 			<div class = "container" id = "level">

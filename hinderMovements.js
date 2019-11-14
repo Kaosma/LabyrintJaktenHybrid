@@ -64,5 +64,64 @@ function movement(path, steps){
 	if (steps == 0) {
 		oldPosition = path[path.length-1];
 	}
-	 maze[oldPosition[0]][oldPosition[1]] = ''; maze[newPosition[0]][newPosition[1]] = '♞';
+	maze[oldPosition[0]][oldPosition[1]] = ''; maze[newPosition[0]][newPosition[1]] = '♞';
+}
+
+function hinderMovement() {
+	/*for (var i = 0; i < hinderArray.length; i++) {
+		movement(hinderArray[i][0], hinderArray[i][1])
+		let steps = hinderArray[i][1];
+		steps ++;
+		if(steps == hinderArray[i][0].length) {
+			steps = 0;
+		}
+	}*/
+	movement(firstSkull, firstSkullSteps);
+	firstSkullSteps++;
+	if (firstSkullSteps == firstSkull.length) {
+		firstSkullSteps = 0;
+	}
+
+	movement(secondSkull, secondSkullSteps);
+	secondSkullSteps++;
+	if (secondSkullSteps == secondSkull.length) {
+		secondSkullSteps = 0;
+	}
+
+	movement(thirdSkull, thirdSkullSteps);
+	thirdSkullSteps++;
+	if (thirdSkullSteps == thirdSkull.length) {
+		thirdSkullSteps = 0;
+	}
+
+	movement(fourthSkull, fourthSkullSteps);
+	fourthSkullSteps++;
+	if (fourthSkullSteps == fourthSkull.length) {
+		fourthSkullSteps = 0;
+	}
+
+	movement(fifthSkull, fifthSkullSteps);
+	fifthSkullSteps++;
+	if (fifthSkullSteps == fifthSkull.length) {
+		fifthSkullSteps = 0;
+	}
+
+	movement(sixthSkull, sixthSkullSteps);
+	sixthSkullSteps++;
+	if (sixthSkullSteps == sixthSkull.length) {
+		sixthSkullSteps = 0;
+	}
+
+	movement(seventhSkull, seventhSkullSteps);
+	seventhSkullSteps++;
+	if (seventhSkullSteps == seventhSkull.length) {
+		seventhSkullSteps = 0;
+	}
+
+	movement(eigthSkull, eigthSkullSteps);
+	eigthSkullSteps++;
+	if (eigthSkullSteps == eigthSkull.length) {
+		eigthSkullSteps = 0;
+	}
+	checkPosition();
 }
