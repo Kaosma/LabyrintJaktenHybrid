@@ -213,9 +213,10 @@ function checkPosition() {
 		(currentY == skullSeven[0] && currentX == skullSeven[1]) ||
 		(currentY == skullEight[0] && currentX == skullEight[1])) {
 		loss = true;
-		console.log("YOU LOSE");
+		window.location.href = "easySetupView.html";
 	} 
 	else if ((currentY == 1 && currentX == 39) || (currentY == 2 && currentX == 39)) {
-		console.log("YOU WIN");
+		win = true;
+		window.location.href = "easySetupView.html";
 	}
 }

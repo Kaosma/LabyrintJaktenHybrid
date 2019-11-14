@@ -43,7 +43,32 @@
 			</div>
 		</div>
 	</body>
-
+	
+	<div class= "modal" id = "giveUpModal">
+ 
+	    <div class= "modal-content">
+		    <span class = "close">&times;</span>
+		    <p> GE UPP? </p>
+		    <button> JA </button>
+		    <button> NEJ </button>
+	    </div>
+	</div>
+	<!-- Modal content
+	<script>
+		var guModal = document.getElementById("giveUpModal");
+		var giveUp = document.getElementById("end");
+		var span = document.getElementsByClassName("close")[0];
+		giveUp.onClick = function() {
+  			guModal.style.display = "block";
+		}
+		span.onClick = function() {
+			guModal.style.display = "none";
+		}
+		window.onClick = function(event) {
+		  if (event.target == guModal) {
+		  	guModal.style.display = "none";
+		}
+	</script> -->
 	<script src = "maze.js"> </script>
 	<script src= "hinderMovements.js"> </script>
 	<script src= "mazeFunctions.js"> </script>
@@ -54,9 +79,9 @@ ToDo List:
 - array vertical space reduce
 
 * lätt medel svår changes
+* win/loss
 * settings page
-* popup win/loss
-* steer arrow alignment
-* button border gameView
-* Percentage
+
+* percentage load
+* popup
 -->

@@ -6,7 +6,21 @@
 		</title>
 
 		<script>
-			
+			function changeStyleEasy() {
+				document.getElementById("easy").style.width = 50%;
+				document.getElementById("medium").style.width = 100%;
+				document.getElementById("hard").style.width = 100%;
+			}
+			function changeStyleMedium() {
+				document.getElementById("easy").style.width = 100%;
+				document.getElementById("medium").style.width = 50%;
+				document.getElementById("hard").style.width = 100%;
+			}
+			function changeStyleHard() {
+				document.getElementById("easy").style.width = 100%;
+				document.getElementById("medium").style.width = 100%;
+				document.getElementById("hard").style.width = 50%;
+			}
 		</script>
 
 		<link rel = "stylesheet" type = "text/css" href="labyrintJaktenSc.css">
@@ -33,74 +47,41 @@
 			</div>
 
 			<div class = "container" id = "difficultyContainer">
-				<button class = "difficulty" id = "easy"> LÄTT </button>
-				<button class = "difficulty" id = "medium"> MEDEL </button>
-				<button class = "difficulty" id = "hard"> SVÅR </button>
+				<button onClick = "changeStyleEasy()" class = "difficulty" id = "easy"> LÄTT </button>
+				<button onClick = "changeStyleMedium()" class = "difficulty" id = "medium"> MEDEL </button>
+				<button onClick = "changeStyleHard()" class = "difficulty" id = "hard"> SVÅR </button>
 			</div>
 
 			<div class = "container" id = "level">
 				<div>
-					<button class="numButton"> 1 </button>
+					<button class="numButton"> 20 </button>
 				</div>
 				<div>
-					<img class="arrowBlock" src = "nextArrowYellow.png">
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 2 </button>
+					<button class="numButton"> 19 </button>
 				</div>
 				<div>
-					<img class="arrowBlock" src = "nextArrowYellow.png">
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 3 </button>
+					<button class="numButton"> 18 </button>
 				</div>
 				<div>
-					<img class="arrowBlock" src = "nextArrowYellow.png">
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 4 </button>
+					<button class="numButton"> 17 </button>
 				</div>
 				<div>
-					<img class="arrowBlock" src = "nextArrowYellow.png">
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 5 </button>
+					<button class="numButton"> 16 </button>
 				</div>
 				<div class="spaceRowOnRight">
-					<img class="arrowBlock arrowDown" src = "nextArrowYellow.png">
-				</div>
-				<div>
-					<button class="numButton"> 10 </button>
-				</div>
-				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
-				</div>
-				<div>
-					<button class="numButton"> 9 </button>
-				</div>
-				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
-				</div>
-				<div>
-					<button class="numButton"> 8 </button>
-				</div>
-				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
-				</div>
-				<div>
-					<button class="numButton"> 7 </button>
-				</div>
-				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
-				</div>
-				<div>
-					<button class="numButton"> 6 </button>
-				</div>
-				<div>
-					<img class="arrowBlock arrowDown" src = "nextArrowYellow.png">
-				</div>
-				<div class="spaceRowOnLeft">
-
+					<img class="arrowBlock arrowUp" src = "nextArrowYellow.png">
 				</div>
 				<div>
 					<button class="numButton"> 11 </button>
@@ -129,35 +110,68 @@
 				<div>
 					<button class="numButton"> 15 </button>
 				</div>
+				<div>
+					<img class="arrowBlock arrowUp" src = "nextArrowYellow.png">
+				</div>
+				<div class="spaceRowOnLeft">
+
+				</div>
+				<div>
+					<button class="numButton"> 10 </button>
+				</div>
+				<div>
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+				</div>
+				<div>
+					<button class="numButton"> 9 </button>
+				</div>
+				<div>
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+				</div>
+				<div>
+					<button class="numButton"> 8 </button>
+				</div>
+				<div>
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+				</div>
+				<div>
+					<button class="numButton"> 7 </button>
+				</div>
+				<div>
+					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+				</div>
+				<div>
+					<button class="numButton"> 6 </button>
+				</div>
 				<div class="spaceRowOnRight">
-					<img class="arrowBlock arrowDown" src = "nextArrowYellow.png">
+					<img class="arrowBlock arrowUp" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 20 </button>
+					<button class="numButton" id = "firstLevel"> 1 </button>
 				</div>
 				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+					<img class="arrowBlock" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 19 </button>
+					<button class="numButton"> 2 </button>
 				</div>
 				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+					<img class="arrowBlock" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 18 </button>
+					<button class="numButton"> 3 </button>
 				</div>
 				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+					<img class="arrowBlock" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 17 </button>
+					<button class="numButton"> 4 </button>
 				</div>
 				<div>
-					<img class="arrowBlock arrowLeft" src = "nextArrowYellow.png">
+					<img class="arrowBlock" src = "nextArrowYellow.png">
 				</div>
 				<div>
-					<button class="numButton"> 16 </button>
+					<button class="numButton"> 5 </button>
 				</div>
 			</div>
 
