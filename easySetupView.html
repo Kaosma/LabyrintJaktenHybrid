@@ -6,26 +6,33 @@
 		</title>
 
 		<script>
+
+
+
 			function changeStyleEasy() {
 				document.getElementById("easy").style.width = "150px";
 				document.getElementById("medium").style.width = "250px";
 				document.getElementById("hard").style.width = "250px";
 				document.getElementById("firstLevel").style.borderColor = "#ffa700";
-				difficulty = 500;
+				saveNeDifficultyToLocalStorage(500);
 			}
 			function changeStyleMedium() {
 				document.getElementById("easy").style.width = "250px";
 				document.getElementById("medium").style.width = "150px";
 				document.getElementById("hard").style.width = "250px";
 				document.getElementById("firstLevel").style.borderColor = "#ff6100";
-				difficulty = 300;
+				saveNeDifficultyToLocalStorage(300);
 			}
 			function changeStyleHard() {
 				document.getElementById("easy").style.width = "250px";
 				document.getElementById("medium").style.width = "250px";
 				document.getElementById("hard").style.width = "150px";
 				document.getElementById("firstLevel").style.borderColor = "#f43f09";
-				difficulty = 100;
+				saveNeDifficultyToLocalStorage(100);
+			}
+
+			function saveNeDifficultyToLocalStorage(newDifficulty) {
+				localStorage.setItem('difficulty', newDifficulty);
 			}
 		</script>
 
