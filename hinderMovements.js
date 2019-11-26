@@ -64,7 +64,7 @@ function movement(path, steps){
 	if (steps == 0) {
 		oldPosition = path[path.length-1];
 	}
-	maze[oldPosition[0]][oldPosition[1]] = ''; maze[newPosition[0]][newPosition[1]] = '♞';
+	maze[oldPosition[0]][oldPosition[1]] = ''; maze[newPosition[0]][newPosition[1]] = '☀';
 }
 
 function hinderMovement() {
