@@ -6,12 +6,20 @@ var win = false;
 var currentY = 7;
 var currentX = 1;
 var userSymbol = "☺";
-var difficulty = 500;
+var difficulty = 500; //default value
 
-setInterval(function(){
-	displayMaze();
-	hinderMovement();
-}, 500);
+function startGame(){   //ive put all logic in other function
+	var newDifficulty = localStorage.getItem('difficulty');  //get difficulty from local storage
+	newDifficulty = parseInt(newDifficulty);  //change newDifficulty from string to number
+	console.log("current difficulty speed level"+newDifficulty);
+	setInterval(function(){
+		displayMaze();
+		hinderMovement();
+	}, newDifficulty);
+}
+
+startGame();
+
 
 function displayMaze() {
 	var mazeString = "";
